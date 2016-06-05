@@ -1,14 +1,24 @@
 include ../Make.defines
 
-PROGS =	daytimetcpcli daytimetcpcli1 daytimetcpcli2 daytimetcpcli3 \
+PROGS =	1.3_daytimetcpcli 1.4_daytimetcpcli 1.5_daytimetcpcli 1.5_daytimetcpsrv \
+        daytimetcpcli1 daytimetcpcli2 daytimetcpcli3 \
 		daytimetcpsrv daytimetcpsrv1 daytimetcpsrv2 daytimetcpsrv3 \
 		daytimetcpcliv6 daytimetcpsrvv6 \
 		byteorder
 
 all:	${PROGS}
 
-daytimetcpcli:	daytimetcpcli.o
-		${CC} ${CFLAGS} -o $@ daytimetcpcli.o ${LIBS}
+1.3_daytimetcpcli:	1.3_daytimetcpcli.o
+		${CC} ${CFLAGS} -o $@ 1.3_daytimetcpcli.o ${LIBS}
+
+1.4_daytimetcpcli:	1.4_daytimetcpcli.o
+		${CC} ${CFLAGS} -o $@ 1.4_daytimetcpcli.o ${LIBS}
+
+1.5_daytimetcpcli:	1.5_daytimetcpcli.o
+		${CC} ${CFLAGS} -o $@ 1.5_daytimetcpcli.o ${LIBS}
+
+1.5_daytimetcpsrv:	1.5_daytimetcpsrv.o
+		${CC} ${CFLAGS} -o $@ 1.5_daytimetcpsrv.o ${LIBS}
 
 daytimetcpcli1:	daytimetcpcli1.o
 		${CC} ${CFLAGS} -o $@ daytimetcpcli1.o ${LIBS}
