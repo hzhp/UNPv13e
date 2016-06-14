@@ -7,6 +7,6 @@ sig_chld(int signo)
 	int		stat;
 
 	pid = wait(&stat);
-	printf("child %d terminated\n", pid);
+	printf("child %d terminated\n", pid);  // 在信号处理函数 sig_chld 中调用 printf 这样的标准 I/O 函数是不合适的
 	return;
 }

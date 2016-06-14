@@ -61,7 +61,7 @@ main(int argc, char **argv)
 		for (i = 1; i <= maxi; i++) {	/* check all clients for data */
 			if ( (sockfd = client[i].fd) < 0)
 				continue;
-			if (client[i].revents & (POLLRDNORM | POLLERR)) {
+			if (client[i].revents & (POLLRDNORM | POLLERR)) {  // POLLRDNORM POLLERR 两者任一成立就满足条件
 				if ( (n = read(sockfd, buf, MAXLINE)) < 0) {
 					if (errno == ECONNRESET) {
 							/*4connection reset by client */

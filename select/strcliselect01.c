@@ -9,7 +9,7 @@ str_cli(FILE *fp, int sockfd)
 
 	FD_ZERO(&rset);
 	for ( ; ; ) {
-		FD_SET(fileno(fp), &rset);
+		FD_SET(fileno(fp), &rset);  // fileno(FILE *stream) 取得标准I/O文件指针对应的描述符
 		FD_SET(sockfd, &rset);
 		maxfdp1 = max(fileno(fp), sockfd) + 1;
 		Select(maxfdp1, &rset, NULL, NULL, NULL);

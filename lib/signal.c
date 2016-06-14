@@ -7,7 +7,7 @@ signal(int signo, Sigfunc *func)
 	struct sigaction	act, oact;
 
 	act.sa_handler = func;
-	sigemptyset(&act.sa_mask);
+	sigemptyset(&act.sa_mask);  // 把 sa_mask 设置为空集，表示该信号处理函数运行期间，不阻塞额外的信号。
 	act.sa_flags = 0;
 	if (signo == SIGALRM) {
 #ifdef	SA_INTERRUPT

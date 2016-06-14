@@ -85,6 +85,11 @@
 #include	<netinet/sctp.h>
 #endif
 
+/* hp_add ≤π≥‰∂®“Â */
+#ifndef OPEN_MAX
+#define OPEN_MAX 1024
+#endif
+
 /* OSF/1 actually disables recv() and send() in <sys/socket.h> */
 #ifdef	__osf__
 #undef	recv
